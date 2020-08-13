@@ -4,10 +4,6 @@ import com.spring.demo.entity.RestResult;
 import com.spring.demo.entity.User;
 import com.spring.demo.service.UserManageService;
 import com.spring.demo.utils.Constants;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -64,8 +60,6 @@ public class UsersController {
      *更新用户信息,成功返回更新后的用户数据
      */
     @PutMapping("/update")
-    @ApiOperation("更新用户信息")
-    @ApiImplicitParam(name = "user", value = "单个用户信息")
     public RestResult updateUser(@RequestBody User user) {
         log.info("request url is /update, user is {}", user.toString());
         RestResult restResult = new RestResult();
